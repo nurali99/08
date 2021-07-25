@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Bosh sahifa {% endblock title %}</title>
+</head>
+<body>
+  
+  {% block content %}
+  <h2 style="text-align: center;" class="home">Asosiy sahifa</h2>
+  {% if user.is_authenticated %}
+  <div class="alert alert-warning" role="alert">
+    <p class="card-footer text-center text-muted"><i>{{user.username}}</i> Sahifa hush kelibsiz</p>
+  </div>
+  <div class="card-footer text-center text-muted"><a class="btn btn-outline-secondary mb-3"  href="{% url 'logout' %}"> Log  Out    </a>
+  <a class="btn btn-outline-danger mb-3" href="{% url 'password_change' %}">PassChange</a></div>
+  {% else %}
+  <div class="alert alert-warning" role="alert">
+    <p>Siz hali saytga kirmagansiz</p>
+  </div>
+  <a id="loginR" class="btn btn-outline-danger" href="{% url 'login' %}">Log In</a> | <a class="btn btn-outline-warning" href="{% url 'signup' %}">Registration</a></p>
+  {% endif %}
+  
+  <div class="jumbotron">
+    <h1 class="display-4">Yangilik sayti</h1>
+    <p>Eng yangi eng so'ngi yangiliklar bizning saytimizda</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'pages' %}" role="button">yangiliklarni ko'rish</a>
+    </p>
+  </div>
+
+  
+  {% endblock content %}
+</body>
+</html>

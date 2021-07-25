@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Actions{% endblock title %}
+{% block content %}
+{% for post in object_list%}
+<div class="post-entry">
+
+</div>
+<div class="card mb-5">
+  <div class="card-header">
+    <span class="font-weight-bold"> <a href="{% url 'post_detail' post.pk %}"><h3>{{post.title}}</h3></a> </span>
+  </div>
+  <div class="card-body">
+    <span class="font-weight-bold">  <img src="" alt="{{post.rasm}}"> </span> 
+    <p>{{post.body}}</p>
+  </div>
+  <div class="card-footer text-center text-muted">
+    <u>{{post.time}}</u> <br>
+    <u>nurali07052020@gmail.com</u>
+  </div>
+
+</div>
+
+{% endfor %}
+{% endblock content %}

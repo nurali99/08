@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Postni O'chirish{% endblock title %}
+{% block content %}
+<h2 class="del">Po'stni o'chirish</h2>
+<form action="" method="post">
+  {% csrf_token %}
+
+</div>
+<div class="card mb-5">
+  <div class="card-header">
+    <span class="font-weight-bold">  <p>{{ post.title }} -> <u><i>postni o'chirish</i></u></p> </span>
+  </div>
+  <div class="card-body">
+    <span class="font-weight-bold">  <img src="" alt="{{post.rasm}}"> </span> 
+    <p>{{post.body}}</p>
+  </div>
+  <div class="card-footer text-center text-muted">
+    <u>{{post.time}}</u> <br>
+    <u>nurali07052020@gmail.com</u><br>
+    <input type="submit" class="btn btn-danger mt-3" value="O'chirish"> |  <a class="btn btn-info mt-3" href="{% url 'post_detail' post.pk %}">Orqaga</a>
+</div>
+
+</div>
+</form>
+
+
+{% endblock content %}

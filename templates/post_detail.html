@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Postni tahrirlash{% endblock title %}
+{% block content %}
+  <h1 style="text-align: center; color: chocolate;">Postni tahrirlash</h1>
+  <div class="card mb-5">
+    <div class="card-header">
+      <span class="font-weight-bold"><h3>{{post.title}}</h3> </span>
+    </div>
+    <div class="card-body">
+      {% if pages.rasm %}
+      <span class="font-weight-bold">  <img src="{{post.rasm}}" alt="{{post.title}}"> </span>
+      {% endif %} 
+      <p>{{post.body}}</p>
+    </div>
+    <div class="card-footer text-center text-muted">
+      <a href="{% url 'post_edit' post.pk %}" class="btn btn-success">Tahrirlash</a>
+      <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">O'chirish</a><br>
+      <u>{{post.time}}</u> <br>
+      <u>nurali07052020@gmail.com</u>
+    </div>
+  
+  </div>
+
+
+
+
+
+  
+
+
+{% endblock content %}
